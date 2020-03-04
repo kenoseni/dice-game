@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  website:
+    build: .
+    command: >
+      gunicorn -b 0.0.0:8000
+        --access-logfile -
+        --reload
+        "dicegame.app:create_app()"
+    environment:
+      PYTHONUNBUFFERED: 'true'
+    volumes:
+      - '.:/dicegame'
+    ports:
+      - 9000:8000

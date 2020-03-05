@@ -20,4 +20,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+RUN pip install --editable .
+
 CMD gunicorn -c "python:config.gunicorn" "dicegame.app:create_app()"

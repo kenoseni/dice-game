@@ -9,6 +9,9 @@ verify_ssl = true
 flask = "==1.1.1"
 werkzeug = "==1.0.0"
 gunicorn = "==20.0.4"
+pytest = "==5.3.5"
+pytest-cov = "==2.8.1"
+flake8 = "==3.7.9"
 
 [requires]
 python_version = "3.8"

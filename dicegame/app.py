@@ -1,5 +1,7 @@
 from flask import Flask
 
+from dicegame.blueprints.page import page
+
 def create_app():
     """Create a Flask application using the app factory pattern
     
@@ -9,12 +11,7 @@ def create_app():
     app.config.from_object('config.settings')
     app.config.from_pyfile('settings.py', silent=True)
     
-    @app.route('/')
-    def index():
-        """Render a welcome response.
-        
-        Return: Flask response"""
-        return app.config['WELCOME']
+    app.register_blueprint(page)
     
     return app    
     
